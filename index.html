@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet"><title>Team Vulkan | Helmet antenna research</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="top"><div class="wrap"><nav><ul><li><a href="#problem">Problem</a></li><li><a href="#research">Research</a></li><li><a href="#journey">How we got here</a></li><li><a href="#solution">Solution</a></li><li><a href="#status">Demo and status</a></li></ul></nav></div></header>
+<main class="wrap">
+<div class="hero"><p class="meta">Smart India Hackathon 2026 · PS 26185 · Team Vulkan</p>
+<h1>An antenna built into the helmet</h1>
+<p>A flexible dual-band array antenna for soldiers in urban close-quarter battle, replacing the whip antenna. This page records what we read, what we tried and why we chose the final design.</p>
+<div class="spec" role="img" aria-label="Frequency bands: UHF 300 to 500 MHz and L-band 1 to 2 GHz on a log scale"><span class="band" style="left:23.9%;width:11.1%">UHF</span><span class="band b2" style="left:50%;width:15%">L-band</span></div>
+<div class="axis"><span>100 MHz</span><span>1 GHz</span><span>10 GHz</span></div></div>
+
+<section id="problem"><div class="grid"><h2>The problem</h2><div>
+<p>Soldiers clearing buildings need audio and video links that work inside reinforced concrete. Vest-mounted whip antennas get in the way and attenuate badly indoors.</p>
+<ul class="plain"><li>Whip antennas snag on doors, gear and debris.</li><li>Signal drops inside concrete, and a single antenna creates dead zones from multipath.</li><li>Exposed electronics are easy to damage.</li></ul>
+<p>Our target: UHF (300–500 MHz) for audio and L-band (1–2 GHz) for video, from a low-profile flexible array on the helmet. The problem statement asks for an array antenna.</p></div></div></section>
+
+<section id="research"><div class="grid"><h2>What we studied</h2><div>
+<p>Open a paper for a one-minute summary and how it shaped our design.</p>
+<table><tr><th>Paper</th><th>Why it matters to us</th></tr>
+<tr><td><a href="papers/lightweight-helmet-antenna.html">Lightweight, High-Bandwidth Conformal Antenna System for Ballistic Helmets</a></td><td>Shows a conformal antenna can sit on a ballistic helmet.</td></tr>
+<tr><td><a href="papers/ultrawideband-helmet-antenna.html">Ultra-wideband Conformal Helmet Antenna</a></td><td>Wideband helmet antenna; defines the bandwidth benchmark.</td></tr>
+<tr><td><a href="papers/capsule-array.html">Reconfigurable Dual-Band Capsule-Conformal Antenna Array</a></td><td>Our reference for a dual-band array on a flexible substrate.</td></tr></table>
+<h3>Patents and defence work</h3>
+<ul class="plain"><li>C. G. Wong, stick-on multi-frequency Wi-Fi backpack and helmet antenna, U.S. Patent 9,413,060 (2016): architecture reference for a multi-frequency conformal antenna.</li><li>U.S. Dept. of Defense SBIR Award #105304, Conformal Antennas for Tactical Communications: shows military interest in this transition.</li></ul>
+<h3>Standards</h3>
+<ul class="plain"><li>MIL-STD-810H: shock, vibration and ruggedisation limits for the helmet assembly.</li><li>IEEE C95.1-2019: human RF exposure and SAR limits.</li></ul>
+<h3>Books</h3>
+<ul class="plain"><li>C. A. Balanis, Antenna Theory: Analysis and Design (ch. 2, 14).</li><li>Girish Kumar and K. P. Ray, Broadband Microstrip Antennas (ch. 2–6).</li></ul></div></div></section>
+
+<section id="journey"><div class="grid"><h2>How we got here</h2><div>
+<ol class="steps">
+<li><strong>Whip antenna</strong>Snags, loses signal in concrete and is easily damaged. This is the problem we are replacing.</li>
+<li><strong>Stacked U-slot patch</strong><span class="dropped">Gave dual-band operation in a thin stack, but it is a single element. Dropped because the problem statement requires an array.</span></li>
+<li><strong>Metamaterial PIFA with split-ring resonators</strong><span class="dropped">Shrank the UHF element well, but again a single element. Dropped for the same reason.</span></li>
+<li class="final"><strong>Dual-band array</strong>Takes the mirrored dual-band element idea from the capsule array paper and the flexible-substrate approach, built for the helmet.</li></ol></div></div></section>
+
+<section id="solution"><div class="grid"><h2>Our solution</h2><div>
+<ul class="plain"><li>An array of dual-band elements around the helmet, so one element always faces the link.</li><li>Each site splits UHF and L-band with a passive diplexer.</li><li>Switches choose the strongest element using received signal strength (RSSI).</li><li>Low-noise amplifiers recover weak signals indoors.</li><li>Flexible substrate so the array follows the helmet curve.</li></ul>
+<p>Element dimensions and simulation results will be added here as they are finalised.</p></div></div></section>
+
+<section id="status"><div class="grid"><h2>Demo and status</h2><div>
+<p>A Phase 0 minimum-value prototype is built. An ESP32 board reads the sensor signal and plots it live, which proves the sensing and display chain before the RF array is complete. Calculations are on Drive and GitHub.</p>
+<div class="links"><a href="#">Graphs and simulations</a><a href="#">GitHub repositories</a><a href="#">Explanation video</a></div></div></div></section>
+</main>
+<footer><div class="wrap">Team Vulkan · Smart India Hackathon 2026</div></footer></body></html>
