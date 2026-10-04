@@ -38,3 +38,6 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--mute);fo
 .paper h2{font-size:1.2rem;margin:2rem 0 .5rem}
 .back{font:600 .95rem Archivo,sans-serif}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+figure{margin:0 0 1.8rem;max-width:44rem}
+figure img{width:100%;height:auto;border:1px solid var(--line);background:#fff}
+figcaption{font-size:.95rem;color:var(--mute);margin-top:.4rem}
