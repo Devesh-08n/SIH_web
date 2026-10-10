@@ -34,10 +34,12 @@
 
 <section id="solution"><div class="grid"><h2>Our solution</h2><div>
 <ul class="plain"><li>An array of dual-band elements around the helmet, so one element always faces the link.</li><li>Each site splits UHF and L-band with a passive diplexer.</li><li>Switches choose the strongest element using received signal strength (RSSI).</li><li>Low-noise amplifiers recover weak signals indoors.</li><li>Flexible substrate so the array follows the helmet curve.</li></ul>
+<h3>HFSS model</h3><figure><img src="images/hfss-model.jpg" alt="3D HFSS model of the antenna array on its substrate"><figcaption>3D model of the array in HFSS: two elements with meandered sections and feed lines on the substrate.</figcaption></figure>
 <h3>Simulated reflection coefficient (S11)</h3>
 <p>Results from our HFSS model (Ansys Student 2025 R2.4). A dip below -10 dB means most of the power is accepted by the antenna at that frequency.</p>
 <figure><img src="images/hfss-s11-uhf.jpg" alt="S11 plot for the UHF band, 0.1 to 1 GHz, with three dips between about 0.38 and 0.43 GHz"><figcaption>UHF sweep: three resonances between about 0.38 and 0.43 GHz, reaching roughly -19, -21 and -18 dB.</figcaption></figure>
 <figure><img src="images/hfss-s11-l.jpg" alt="S11 plot for the L-band, 1.4 to 1.7 GHz, with dips near 1.50, 1.57 and 1.62 GHz"><figcaption>L-band sweep: resonances near 1.50 GHz (about -12 dB) and 1.57 GHz (about -20 dB). The one near 1.62 GHz reaches only about -7 dB.</figcaption></figure>
+<h3>Impedance match (Smith chart)</h3><figure><img src="images/hfss-smith-l.jpg" alt="Smith chart of the L-band sweep"><figcaption>L-band sweep (1.4 to 1.7 GHz) on a Smith chart. The closer a loop passes to the centre, the better the antenna is matched at that frequency.</figcaption></figure>
 <p>Element dimensions will be added here as they are finalised.</p></div></div></section>
 
 <section id="status"><div class="grid"><h2>Demo and status</h2><div>
